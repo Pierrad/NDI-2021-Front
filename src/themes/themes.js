@@ -1,14 +1,11 @@
-const colors = {
+export const colors = {
   pureWhite: '#FFFFFF',
   pureBlack: '#000000',
-  bellflower: '#4956B6',
-  heraBlue: '#717feb',
-  blueChaos: '#4EA1FD',
-  gainsboro: '#DCDCDC',
-  grey: '#808080',
-  coralRed: '#FF4040',
-  ziggurat: '#8b98a9',
-  darkOrange: '#FF6B00',
+  darkMarron: '#5D5C61',
+  lightMarron: '#379683',
+  lightBlue: '#7395AE',
+  darkBlue: '#557A95',
+  beige: '#B1A296',
 }
 
 export const lightTheme = {
