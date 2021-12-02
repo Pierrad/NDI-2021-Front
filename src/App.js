@@ -1,5 +1,5 @@
 import { ThemeProvider } from "styled-components";
-import { BrowserRouter as Router, Route, Switch, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import { GlobalStyles } from "./themes/globalStyles";
 import { lightTheme, darkTheme } from "./themes/themes";
