@@ -1,5 +1,5 @@
 import { ThemeProvider } from "styled-components";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, useLocation } from "react-router-dom";
 
 import { GlobalStyles } from "./themes/globalStyles";
 import { lightTheme, darkTheme } from "./themes/themes";
@@ -7,6 +7,9 @@ import { lightTheme, darkTheme } from "./themes/themes";
 import Header from './components/Header';
 
 import Home from "./pages/Home";
+import Search from "./pages/Search";
+import Article from "./pages/Article";
+import Community from "./pages/Community";
 
 import * as SC from './AppStyled';
 
@@ -16,12 +19,12 @@ function App() {
       <GlobalStyles/>
       <SC.Container>
         <Router>
-          <Header actual={"search"} />
+          <Header />
           <Switch>
             <Route path="/" exact component={() => <Home />} />
-            <Route path="/search" exact component={() => <Home />} />
-            <Route path="/article" exact component={() => <Home />} />
-            <Route path="/community" exact component={() => <Home />} />
+            <Route path="/search" exact component={() => <Search />} />
+            <Route path="/article" exact component={() => <Article />} />
+            <Route path="/community" exact component={() => <Community />} />
           </Switch>
         </Router>
       </SC.Container>

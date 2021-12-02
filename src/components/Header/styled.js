@@ -23,9 +23,15 @@ export const Logo = styled.img`
   height: 4.5rem;
 `
 
-export const Title = styled.h1`
+export const Title = styled(BasicLink)`
+  font-size: 2.5rem;
+  font-weight: bold;
   margin-left: 1rem;
   color: ${props => props.theme.colors.darkMarron };
+  text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 `
 
 export const Nav = styled.div`

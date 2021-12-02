@@ -3,7 +3,11 @@ import React from "react";
 import * as SC from './styled';
 
 const Home = () => {
-  return <SC.Container>Home</SC.Container>;
+  return (
+    <div>
+      <h1>Home</h1>
+    </div>
+  );
 }
 
 export default Home;
