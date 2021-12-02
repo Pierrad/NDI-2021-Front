@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+import * as SC from './styled';
 
 const Search = () => {
+  const [search, setSearch] = useState('');
+
+  const handleChange = (e) => {
+    setSearch(e.target.value);
+  };
+
   return (
-    <div>
-      <h1>Search</h1>
-    </div>
+    <SC.Container>
+      <SC.Wrapper>
+        <SC.Title>Je recherche...</SC.Title>
+        <SC.Search onChange={handleChange} value={search} />
+      </SC.Wrapper>
+    </SC.Container>
   );
 }
 

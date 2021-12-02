@@ -14,9 +14,6 @@ const Header = () => {
     setActual(location.pathname.split("/")[1]);
   }, [location.pathname])
 
-  console.log(actual);
-
-
   return (
     <SC.Container>
       <SC.Wrapper>
