@@ -20,6 +20,13 @@ export const getSearchResult = async (search, types) => {
      })
   };
   
-  const response = await fetch(`${process.env.REACT_APP_API_URL}/rescues/precise`, requestOptions).then(response => response.json())
-  return response
+  try {
+    await fetch(`${process.env.REACT_APP_API_URL}/rescues/precise`, requestOptions)
+      .then(response => response.json())
+      .then(data => {
+        return data
+      })
+  } catch (error) {
+    console.log(error)
+  }
 }
