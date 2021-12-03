@@ -31,7 +31,7 @@ function App() {
             <Route path="/search" exact component={() => <Search />} />
             <Route path="/article" exact component={() => <Article />} />
             <Route path="/community" exact component={() => <Community />} />
-            <Route path="/results" exact component={() => <Result />} />
+            <Route path="/results/:search?/:type?" exact component={() => <Result />} />
           </Switch>
         </Router>
       </SC.Container>

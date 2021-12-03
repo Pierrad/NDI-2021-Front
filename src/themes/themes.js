@@ -6,6 +6,7 @@ export const colors = {
   lightBlue: '#7395AE',
   darkBlue: '#557A95',
   beige: '#B1A296',
+  red: '#E84444',
 }
 
 export const lightTheme = {
