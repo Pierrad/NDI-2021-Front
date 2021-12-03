@@ -14,7 +14,7 @@ background-color : ${props => props.isSelected ? props.theme.colors.pureBlack : 
 
   &:hover {
     text-decoration: none;
-    background-color: beige;
+    background-color: #379683;
     cursor: pointer;
 
 }
