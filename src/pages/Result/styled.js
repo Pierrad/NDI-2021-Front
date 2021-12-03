@@ -10,6 +10,7 @@ export const Cards = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
+  background-color: white;
   & > div {
       margin-bottom: 2rem;
   }
