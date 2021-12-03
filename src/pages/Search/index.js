@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Lottie from 'react-lottie'
+import { useHistory } from "react-router-dom";
+
 
 import * as SC from './styled';
 import loadingAnimation from '../../assets/lottie/loading.json'
@@ -11,6 +13,7 @@ const Search = () => {
   const [isSaveSelected, setIsSaveSelected] = useState(false);
   const [isBoatSelected, setIsBoatSelected] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const history = useHistory();
 
   const handleChange = (e) => {
     setSearch(e.target.value);
@@ -19,6 +22,9 @@ const Search = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setTimeout(() => {
+      history.push("/results");
+    }, 2000);
   };
 
   const loadingOptions = {

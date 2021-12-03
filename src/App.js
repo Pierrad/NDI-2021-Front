@@ -13,7 +13,7 @@ import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Article from "./pages/Article";
 import Community from "./pages/Community";
-
+import Result from "./pages/Result";
 
 import * as SC from './AppStyled';
 
@@ -31,6 +31,7 @@ function App() {
             <Route path="/search" exact component={() => <Search />} />
             <Route path="/article" exact component={() => <Article />} />
             <Route path="/community" exact component={() => <Community />} />
+            <Route path="/results" exact component={() => <Result />} />
           </Switch>
         </Router>
       </SC.Container>
