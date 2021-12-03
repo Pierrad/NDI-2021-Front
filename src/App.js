@@ -27,7 +27,7 @@ function App() {
         <Router>
           {isMobile ? <HeaderMobile/> : <Header />}
           <Switch>
-            <Route path="/" exact component={() => <Home />} />
+            <Route path="/home" exact component={() => <Home />} />
             <Route path="/search" exact component={() => <Search />} />
             <Route path="/article" exact component={() => <Article />} />
             <Route path="/community" exact component={() => <Community />} />
