@@ -21,7 +21,10 @@ const Result = () => {
     } else {
       types = []
     }
-    console.log(getSearchResult(search, types));
+    getSearchResult(search, types).then(res => {
+      console.log(res);
+      setResult(res.data)
+    });
   }, [search, type]);
 
   const searchOptions = {
@@ -38,7 +41,7 @@ const Result = () => {
       <SC.Wrapper>
         <SC.Cards>
           {result && result.length > 0 && result.map((item, index) => (
-            <ResultCard title={item.title} description={item.description} image="//unsplash.it/64/64"/>
+            <ResultCard title={item.title} description={item.story} image="//unsplash.it/64/64"/>
           ))}
           {result && result.length === 0 && (
             <SC.Spinner>
