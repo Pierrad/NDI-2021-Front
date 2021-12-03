@@ -27,7 +27,7 @@ export const Title = styled(BasicLink)`
   font-size: 2.5rem;
   font-weight: bold;
   margin-left: 1rem;
-  color: ${props => props.theme.colors.darkMarron };
+  color: ${props => props.theme.colors.pureWhite };
   text-decoration: none;
   &:hover {
     text-decoration: none;
@@ -48,7 +48,7 @@ export const NavItem = styled.div`
 export const NavLink = styled(BasicLink)`
   text-decoration: none;
   border-bottom: ${props => props.actual ? `1px solid ${props.theme.colors.darkMarron}` : 'none'};
-  color: ${props => props.theme.colors.darkMarron };
+  color: ${props => props.theme.colors.pureWhite };
   &:hover {
     text-decoration: none;
     color: ${props => props.actual ? props.theme.colors.darkMarron : props.theme.colors.lightBlue };

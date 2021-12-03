@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import ResultCard from "../../components/ResultCard";
 import { useParams } from "react-router"; 
 import Lottie from 'react-lottie';
 
 import searchAnimation from '../../assets/lottie/search.json';
 
-import { getSearchResult } from './api'
 
 import * as SC from './styled';
 
@@ -21,10 +20,35 @@ const Result = () => {
     } else {
       types = []
     }
-    getSearchResult(search, types).then(res => {
-      console.log(res);
-      setResult(res.data)
-    });
+
+    async function fetchMyAPI() {
+      const dataTypes = {}
+      types.forEach(type => {
+        if (type.length > 0) {
+          dataTypes[type] = search
+        }
+      })
+    
+      if (types.length === 0) {
+        dataTypes.secourist = search
+        dataTypes.saved = search
+        dataTypes.boat = search
+      }
+    
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            ...dataTypes 
+         })
+      };
+
+      let response = await fetch(`${process.env.REACT_APP_API_URL}/rescues/precise`, requestOptions)
+      let data = await response.json()
+      setResult(data?.data)
+    }
+
+    fetchMyAPI()
   }, [search, type]);
 
   const searchOptions = {
@@ -36,13 +60,20 @@ const Result = () => {
     },
   }
 
+  const renderResult = useMemo(() => {
+    return (
+      result && result.length > 0 && result.map((item, index) => (
+        <ResultCard title={item.title} description={item.story} image="//unsplash.it/64/64"/>
+      ))
+    )
+  }, [result])
+
+
   return (
     <div>
       <SC.Wrapper>
         <SC.Cards>
-          {result && result.length > 0 && result.map((item, index) => (
-            <ResultCard title={item.title} description={item.story} image="//unsplash.it/64/64"/>
-          ))}
+          {renderResult}
           {result && result.length === 0 && (
             <SC.Spinner>
               <Lottie options={searchOptions}

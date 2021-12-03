@@ -65,5 +65,8 @@ export const Errors = styled.div`
 `
 
 export const SubmitButton = styled.button`
+`
 
+export const Text = styled.p`
+  font-size: 1.2rem;
 `

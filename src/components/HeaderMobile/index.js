@@ -22,7 +22,7 @@ const HeaderMobile = () => {
         <SC.Left>
           <SC.Logo src={CorsaireImg} />
           <SC.Logo src={SauveteurImg} />
-          <SC.Title to="/">{"Les Sauveteurs du dunkerquois"}</SC.Title>
+          <SC.Title to="/home">{"Les Sauveteurs du dunkerquois"}</SC.Title>
         </SC.Left>
         <Burger open={isOpen} setOpen={() => setIsOpen(!isOpen)} />
         <SC.MenuC open={isOpen} setOpen={() => setIsOpen(!isOpen)}>

@@ -29,7 +29,7 @@ export const Title = styled(BasicLink)`
   font-size: 1.5rem;
   font-weight: bold;
   margin-left: 1rem;
-  color: ${props => props.theme.colors.darkMarron };
+  color: ${props => props.theme.colors.pureWhite };
   text-decoration: none;
   &:hover {
     text-decoration: none;

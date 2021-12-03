@@ -66,6 +66,7 @@ const Community = () => {
             <SC.Input placeholder={'Titre'} value={title} onChange={handleTitle}/>
             <SC.Input placeholder={"L'histoire"} value={story} onChange={handleStory}/>
             <SC.DateInput selected={date} onChange={(date) => setDate(date)} />
+            <SC.Text>Merci de séparer les noms des personnes par une virgule</SC.Text>
             <SC.Input placeholder={'Nom des sauveteurs'} value={rescuer} onChange={handleRescuer} />
             <SC.Input placeholder={'Noms des personnes décédés'} value={deads} onChange={handleDeads}/>
             <SC.Input placeholder={'Noms des personnes sauvées'} value={saved} onChange={handleSaved}/>
