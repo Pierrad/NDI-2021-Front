@@ -12,7 +12,6 @@ const SearchBar = ({ className, onChange, value }) => {
         value={value}
       />
     </SC.SearchBarContainer>
-    
   );
 }
 
