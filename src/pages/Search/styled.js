@@ -63,6 +63,12 @@ export const Search = styled(SearchBar)`
   margin-bottom: 2rem;
 `
 
+export const Errors = styled.div`
+  font-size: 1.2rem;
+  color: ${props => props.theme.colors.red};
+  margin-bottom: 2rem;
+`
+
 export const SearchButtonC = styled(SearchButton)``
 
 export const Spinner = styled.div`

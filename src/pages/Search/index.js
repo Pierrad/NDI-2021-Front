@@ -13,6 +13,7 @@ const Search = () => {
   const [isSaveSelected, setIsSaveSelected] = useState(false);
   const [isBoatSelected, setIsBoatSelected] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState('');
   const history = useHistory();
 
   const handleChange = (e) => {
@@ -21,10 +22,15 @@ const Search = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setTimeout(() => {
-      history.push("/results");
-    }, 2000);
+    if (search.length > 0) {
+      setIsSubmitting(true);
+      const type = `${isRescueSelected ? 'secourist,' : ''}${isSaveSelected ? 'saved,' : ''}${isBoatSelected ? 'boat' : ''}`;
+      setTimeout(() => {
+        history.push(`/results/${search}/${type}`);
+      }, 2000);
+    } else {
+      setErrors('Veuillez entrer un terme de recherche');
+    }
   };
 
   const loadingOptions = {
@@ -59,6 +65,9 @@ const Search = () => {
             />
           </SC.Buttons>
           <SC.Search onChange={handleChange} value={search} />
+          {errors && (
+            <SC.Errors>{errors}</SC.Errors>
+          )}
           <SC.SearchButtonC onClick={handleSubmit} isSubmiting={isSubmitting}>
             {!isSubmitting ? "Rechercher" : (
               <SC.Spinner>
