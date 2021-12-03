@@ -1,5 +1,7 @@
 import React from 'react';
 
+import * as SC from './styled';
+
 const Article = () => {
   return (
     <div>
